@@ -1,0 +1,130 @@
+actions:
+- action_hello_world
+- action_imagedenti
+- action_imagederma
+- action_imageshow
+- action_question
+- action_re
+- action_Q_Date
+- action_show_schedule
+- action_reservation
+- action_Q_Reserve
+- utter_ask_age
+- utter_ask_continue
+- utter_ask_feedback
+- utter_ask_gender
+- utter_ask_id
+- utter_ask_name
+- utter_chitchat
+- utter_default
+- utter_greet
+- utter_iamabot
+- utter_noworries
+- utter_restart
+- utter_slots_values
+- utter_submit
+- utter_wrong_cuisine
+- utter_wrong_num_people
+- utter_wrong_outdoor_seating
+entities:
+- age
+- cuisine
+- feedback
+- gender
+- id
+- name
+- number
+- seating
+- user_name
+- subject
+
+forms:
+- restaurant_form
+intents:
+- greet
+- disagree
+- dentist
+- inform
+- request_restaurant:
+    use_entities: []
+- chitchat:
+    use_entities: []
+- affirm
+- deny
+- stop
+- thankyou
+- bot_challenge
+- agree
+- submitDone
+- dermatology
+- inputdate
+- inputtime
+responses:
+  utter_ask_age:
+  - text: 나이를 입력해주세요
+  utter_ask_continue:
+  - text: do you want to continue?
+  utter_ask_feedback:
+  - text: please give your feedback on your experience so far
+  utter_ask_gender:
+  - text: 성별을 입력해주세요
+  utter_ask_id:
+  - text: 주민번호를 입력해주세요
+  utter_ask_name:
+  - text: 성함을 입력해주세요
+  utter_chitchat:
+  - text: chitchat
+  utter_default:
+  - text: sorry, I didn't understand you, please try input something else
+  utter_greet:
+  - text: Hello! I am restaurant search assistant! How can I help?
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_noworries:
+  - text: you are welcome :)
+  utter_restart:
+  - text: restarted
+  utter_slots_values:
+  - text: "환자가 작성한 회원정보를 확인하세요.:\n - 이름: {name}\n - 나이: {age}\n - 성별: {gender}\n -\
+      \ 주민번호: {id}\n"
+  utter_submit:
+  - text: 입력이 완료되었습니다!
+  utter_wrong_cuisine:
+  - text: cuisine type is not in the database, please try again
+  utter_wrong_num_people:
+  - text: number of people should be a positive integer, please try again
+  utter_wrong_outdoor_seating:
+  - text: could not convert input to boolean value, please try again
+session_config:
+  carry_over_slots_to_new_session: true
+  session_expiration_time: 60
+slots:
+  age:
+    type: unfeaturized
+  cuisine:
+    auto_fill: false
+    type: unfeaturized
+  feedback:
+    auto_fill: false
+    type: unfeaturized
+  gender:
+    type: unfeaturized
+  id:
+    type: unfeaturized
+  name:
+    type: unfeaturized
+  num_people:
+    auto_fill: false
+    type: unfeaturized
+  outdoor_seating:
+    auto_fill: false
+    type: unfeaturized
+  preferences:
+    auto_fill: false
+    type: unfeaturized
+  requested_slot:
+    type: unfeaturized
+  subject:
+    type: text
+  date:
+    type: text
